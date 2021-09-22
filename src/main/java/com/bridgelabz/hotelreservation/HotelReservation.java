@@ -33,10 +33,15 @@ public class HotelReservation {
 				hotelReservationSystem.addHotel(name, Rating, weekday, weekend);
 				break;
 			case 2:
-				hotelReservationSystem.findcheapestHotel();
+
+				System.out.println("Enter start date : ");
+				String date1 = sc.next();
+				System.out.println("Enter end date : ");
+				String date2 = sc.next();
+				hotelReservationSystem.findcheapestHotel(date1,date2);
 				break;
 			default:
-				System.out.print("\nInvalid option");
+				System.out.print("\n Invalid option");
 			}
 			System.out.print("\nDo you want to continue? Press 1 : ");
 			continueFlag = sc.nextInt();

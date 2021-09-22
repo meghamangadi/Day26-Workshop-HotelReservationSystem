@@ -23,4 +23,25 @@ public class HotelReservationSystemTest {
 		Assert.assertNotSame(hotelLakewood.getHotelName(), isValidHotel1.getHotelName());
 
 	}
+
+	@Test
+	public void givenDate_findCheapestHotel_ShoulReturnTrue() {
+		HotelReservationSystem hotelReservationService = new HotelReservationSystem();
+		hotelReservationService.addHotel("Lakewood", 3, 110, 90);
+		hotelReservationService.addHotel("Rridgewood", 4, 220, 150);
+		HotelResponse cheapset = hotelReservationService.findcheapestHotel("10Sep2020", "11Sep2020");
+		Assert.assertSame("Lakewood", cheapset.getHotelName());
+
+	}
+
+	@Test
+	public void givenDate_findCheapestHotel_ShoulReturnFlase() {
+		HotelReservationSystem hotelReservationService = new HotelReservationSystem();
+		hotelReservationService.addHotel("Lakewood", 3, 110, 90);
+		hotelReservationService.addHotel("Rridgewood", 4, 220, 150);
+		HotelResponse cheapset = hotelReservationService.findcheapestHotel("10Sep2020", "11Sep2020");
+		Assert.assertNotSame("Rridgewood", cheapset.getHotelName());
+
+	}
+
 }

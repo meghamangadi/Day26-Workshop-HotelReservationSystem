@@ -22,20 +22,13 @@ public class HotelReservationSystem {
 		return hotel;
 	}
 
-	public void findcheapestHotel() {
-
+	public HotelResponse findcheapestHotel(String date1,String date2 ) {
+		HotelResponse hotelResponse=new HotelResponse();
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("Enter start date : ");
-		String date1 = sc.nextLine();
-		System.out.print("Enter end date : ");
-		String date2 = sc.nextLine();
-		// define date format
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMMyyyy");
-		// convert given format date into local date
 		LocalDate startDate = LocalDate.parse(date1, formatter);
 		LocalDate endDate = LocalDate.parse(date2, formatter);
-		// find number of days
 		final long days = ChronoUnit.DAYS.between(startDate, endDate);
 
 		String hotelName = " ";
@@ -49,7 +42,10 @@ public class HotelReservationSystem {
 				hotelName = hotel.getHotelName();
 			}
 		}
-		System.out.print(hotelName + " , Total Rate : " + min);
+		hotelResponse.setHotelName(hotelName);
+		hotelResponse.setCheapestCost(min);
+		System.out.print("Cheapest Hotel : " +hotelName + " ,Total Rate : " + min);
+		return hotelResponse;
 	}
 
 	public ArrayList<Hotel> getHotelList() {
