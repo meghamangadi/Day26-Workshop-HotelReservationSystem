@@ -7,13 +7,22 @@ public class HotelReservationSystemTest {
 
 	@Test
 	public void givenHotelDetails_WhenValuesEnteredAreCorrect_ShoulReturnTrue()
-	{
+	{ 
+		 
 		HotelReservationSystem hotelReservationService = new HotelReservationSystem();
-		boolean isValidHotel1 = hotelReservationService.addHotel("Lakewood", 3, 110, 90);
-		Assert.assertTrue(isValidHotel1);
-		boolean isValidHotel2 = hotelReservationService.addHotel("Bridgewood", 4, 160, 60);
-		Assert.assertTrue(isValidHotel2);
-		boolean isValidHotel3 = hotelReservationService.addHotel("Ridgewood", 5, 220, 150);
-		Assert.assertTrue(isValidHotel3);
+		Hotel isValidHotel1 = hotelReservationService.addHotel("Lakewood", 3, 110, 90);
+		Hotel hotelLakewood=new Hotel("Lakewood", 3, 110, 90);
+		Assert.assertSame(hotelLakewood.getHotelName(), isValidHotel1.getHotelName());
+	 
+	}
+	
+	@Test
+	public void givenHotelDetails_WhenValuesEnteredAreCorrect_ShoulReturnFalse()
+	{ 
+		HotelReservationSystem hotelReservationService = new HotelReservationSystem();
+		Hotel isValidHotel1 = hotelReservationService.addHotel("Lakewood", 3, 110, 90);
+		Hotel hotelLakewood=new Hotel("Rridgewood", 4, 220, 150);
+		Assert.assertNotSame(hotelLakewood.getHotelName(), isValidHotel1.getHotelName()); 
+		 
 	}
 }
