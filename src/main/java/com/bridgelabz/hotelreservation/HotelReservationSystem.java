@@ -4,13 +4,15 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class HotelReservationSystem {
 
 	ArrayList<Hotel> hotelList = new ArrayList<Hotel>();
 	Hotel hotel;
-
+     Map<String, Hotel> hotelMap=new HashMap<>();
 	public Hotel addHotel(String hotelName , double weekdayRateRegular, double weekendRateRegular,int rating) {
 
 		hotel = new Hotel();
@@ -33,18 +35,23 @@ public class HotelReservationSystem {
 
 		String hotelName = " ";
 		double min = 0;
+		int rate=0;
+	   
+		
 		for (Hotel hotel : hotelList) {
 
 			double totalRate = (double) days * (hotel.getWeekdayRegularCustomerCost()+ hotel.getWeekendRegularCustomerCost());
-			if (min == 0 || totalRate < min) {
+			int rating=hotel.getRating();
+			if (min == 0 || totalRate > min && rating > 0 ) {
 
 				min = totalRate;
 				hotelName = hotel.getHotelName();
+				rate=hotel.getRating();
 			}
 		}
 		hotelResponse.setHotelName(hotelName);
 		hotelResponse.setCheapestCost(min);
-		System.out.print("Cheapest Hotel : " +hotelName + " ,Total Rate : " + min);
+		System.out.print("Cheapest Hotel : " +hotelName + " ,Total Rate : " + min +" Rating :"+rate);
 		return hotelResponse;
 	}
 
