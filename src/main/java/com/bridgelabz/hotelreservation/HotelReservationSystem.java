@@ -42,9 +42,9 @@ public class HotelReservationSystem {
 		
 		for (Hotel hotel : hotelList) {
 
-			double totalRate = (double) days * (hotel.getWeekdayRegularCustomerCost()+ hotel.getWeekendRegularCustomerCost());
-			int rating=hotel.getRating();
-			if (min == 0 || totalRate > min && rating > 0 ) {
+			double totalRate = (double) days * (hotel.getWeekdayRewardsCustomerCost()+ hotel.getWeekendRewardsCustomerCost());
+			 
+			if (min == 0 || totalRate < min   ) {
 
 				min = totalRate;
 				hotelName = hotel.getHotelName();

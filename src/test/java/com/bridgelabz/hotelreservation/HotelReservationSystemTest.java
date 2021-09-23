@@ -30,7 +30,7 @@ public class HotelReservationSystemTest {
 		hotelReservationService.addHotel("Lakewood", 110, 90,3,80,80);
 		hotelReservationService.addHotel("Rridgewood", 220, 150,4,50,50);
 		HotelResponse cheapset = hotelReservationService.findcheapestHotel("10Sep2020", "11Sep2020");
-		Assert.assertSame("Lakewood", cheapset.getHotelName());
+		Assert.assertSame("Rridgewood", cheapset.getHotelName());
 
 	}
 
@@ -40,7 +40,7 @@ public class HotelReservationSystemTest {
 		hotelReservationService.addHotel("Lakewood", 110, 90,3,80,80);
 		hotelReservationService.addHotel("Rridgewood", 220, 150,4,50,50);
 		HotelResponse cheapset = hotelReservationService.findcheapestHotel("10Sep2020", "11Sep2020");
-		Assert.assertNotSame("Rridgewood", cheapset.getHotelName());
+		Assert.assertNotSame("Bridgewood", cheapset.getHotelName());
 
 	}
 
