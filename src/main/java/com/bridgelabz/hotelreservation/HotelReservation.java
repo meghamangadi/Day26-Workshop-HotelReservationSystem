@@ -27,8 +27,10 @@ public class HotelReservation {
 				System.out.println("Enter regular customer rate weekday : ");
 				double weekday=sc.nextDouble();
 				System.out.println("Enter regular customer rate weekend : ");
-				double weekend=sc.nextDouble(); 	
-				hotelReservationSystem.addHotel(name, weekday, weekend);
+				double weekend=sc.nextDouble(); 
+				System.out.println("Enter rating for the hotel: ");
+				int rating=sc.nextInt();
+				hotelReservationSystem.addHotel(name, weekday, weekend,rating);
 				break;
 			case 2:
 
