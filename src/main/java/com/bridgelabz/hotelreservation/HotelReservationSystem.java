@@ -13,12 +13,14 @@ public class HotelReservationSystem {
 	ArrayList<Hotel> hotelList = new ArrayList<Hotel>();
 	Hotel hotel;
      Map<String, Hotel> hotelMap=new HashMap<>();
-	public Hotel addHotel(String hotelName , double weekdayRateRegular, double weekendRateRegular,int rating) {
+	public Hotel addHotel(String hotelName , double weekdayRateRegular, double weekendRateRegular,int rating,double rewardsweekday,double rewardsweekend) {
 
 		hotel = new Hotel();
 		hotel.setHotelName(hotelName); 
 		hotel.setWeekdayRegularCustomerCost(weekdayRateRegular);
 		hotel.setWeekendRegularCustomerCost(weekendRateRegular);
+		hotel.setWeekdayRewardsCustomerCost(rewardsweekday);
+		hotel.setWeekendRewardsCustomerCost(rewardsweekend);
 		hotel.setRating(rating);
 		hotelList.add(hotel);
 		return hotel;

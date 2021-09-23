@@ -13,7 +13,7 @@ public class HotelReservation {
 		Scanner sc = new Scanner(System.in);
 		int continueFlag;
 		do {
-			System.out.print("\n-----------------------------------");
+			System.out.print("\n-----------------------------------UC7");
 			System.out.print("\n  Hotel Reservation System  ");
 			System.out.print("\n-----------------------------------");
 			System.out.print("\n\n1 : Add Hotel details \n2: Search cheapest Hotel");
@@ -27,10 +27,14 @@ public class HotelReservation {
 				System.out.println("Enter regular customer rate weekday : ");
 				double weekday=sc.nextDouble();
 				System.out.println("Enter regular customer rate weekend : ");
-				double weekend=sc.nextDouble(); 
+				double weekend=sc.nextDouble(); 				
+				System.out.println("Enter rewards customer rate in weekday : ");
+				double rewardsweekday=sc.nextDouble();
+				System.out.println("Enter rewards customer rate weekend : ");
+				double rewardsweekend=sc.nextDouble();
 				System.out.println("Enter rating for the hotel: ");
 				int rating=sc.nextInt();
-				hotelReservationSystem.addHotel(name, weekday, weekend,rating);
+				hotelReservationSystem.addHotel(name, weekday, weekend, rating,rewardsweekday,rewardsweekend);
 				break;
 			case 2:
 
