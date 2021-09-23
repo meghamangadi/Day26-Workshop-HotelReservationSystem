@@ -13,10 +13,10 @@ public class HotelReservation {
 		Scanner sc = new Scanner(System.in);
 		int continueFlag;
 		do {
-			System.out.print("\n----------------------------------");
+			System.out.print("\n-----------------------------------");
 			System.out.print("\n  Hotel Reservation System  ");
 			System.out.print("\n-----------------------------------");
-			System.out.print("\n\n1 : Add Hotel details \n2 : Search cheapest Hotel");
+			System.out.print("\n\n1 : Add Hotel details \n2: Search cheapest Hotel");
 			System.out.print("\nChoose your option : ");
 			int option = sc.nextInt();
 			switch (option) {
