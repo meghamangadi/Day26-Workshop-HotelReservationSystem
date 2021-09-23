@@ -35,7 +35,7 @@ public class HotelReservationSystem {
 		double min = 0;
 		for (Hotel hotel : hotelList) {
 
-			double totalRate = (double) days * hotel.getWeekdayRegularCustomerCost();
+			double totalRate = (double) days * (hotel.getWeekdayRegularCustomerCost()+ hotel.getWeekendRegularCustomerCost());
 			if (min == 0 || totalRate < min) {
 
 				min = totalRate;
